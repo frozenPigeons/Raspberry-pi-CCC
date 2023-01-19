@@ -69,64 +69,30 @@ while GPIO.input(17) != False:
 if(GPIO.input(17) == False):
     print(songs)
 
+def LETTERS(DIGIT):
+    if songs[DIGIT] == 'A':
+        A()
+    if songs[DIGIT] == 'B':
+        B()
+    if songs[DIGIT] == 'C':
+        C()
+    if songs[DIGIT] == 'D':
+        D()
+    if songs[DIGIT] == 'E':
+        E()
+
+    for i in range(len(Digits)):
+        if i == DIGIT:
+            GPIO.output(Digits[i], True)
+        else:
+            GPIO.output(Digits[i], False)
+
 while True:
     time.sleep(0.001)
-    GPIO.output(20, True)
-    GPIO.output(24, False)
-    GPIO.output(23, False)
-    GPIO.output(10, False)
-    if songs[0] == 'A':
-        A()
-    if songs[0] == 'B':
-        B()
-    if songs[0] == 'C':
-        C()
-    if songs[0] == 'D':
-        D()
-    if songs[0] == 'E':
-        E()
+    LETTERS(0)
     time.sleep(0.001)
-    GPIO.output(20, False)
-    GPIO.output(24, True)
-    GPIO.output(23, False)
-    GPIO.output(10, False)
-    if songs[1] == 'A':
-        A()
-    if songs[1] == 'B':
-        B()
-    if songs[1] == 'C':
-        C()
-    if songs[1] == 'D':
-        D()
-    if songs[1] == 'E':
-        E()  
+    LETTERS(1)
     time.sleep(0.001)
-    GPIO.output(20, False)
-    GPIO.output(24, False)
-    GPIO.output(23, True)
-    GPIO.output(10, False)
-    if songs[2] == 'A':
-        A()
-    if songs[2] == 'B':
-        B()
-    if songs[2] == 'C':
-        C()
-    if songs[2] == 'D':
-        D()
-    if songs[2] == 'E':
-        E()  
+    LETTERS(2)
     time.sleep(0.001)
-    GPIO.output(20, False)
-    GPIO.output(24, False)
-    GPIO.output(23, False)
-    GPIO.output(10, True)
-    if songs[3] == 'A':
-        A()
-    if songs[3] == 'B':
-        B()
-    if songs[3] == 'C':
-        C()
-    if songs[3] == 'D':
-        D()
-    if songs[3] == 'E':
-        E()  
+    LETTERS(3)
